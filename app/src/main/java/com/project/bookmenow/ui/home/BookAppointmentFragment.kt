@@ -5,23 +5,27 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.applandeo.materialcalendarview.CalendarDay
+import com.applandeo.materialcalendarview.listeners.OnCalendarDayClickListener
 import com.project.bookmenow.adapter.TimeSlotsGridAdapter
-import com.project.bookmenow.databinding.FragmentHomeBinding
+import com.project.bookmenow.databinding.FragmentBookAppointmentBinding
 import com.project.bookmenow.utils.Constants
 
-class HomeFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickListener {
+class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickListener {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentBookAppointmentBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
     private lateinit var gridAdapter: TimeSlotsGridAdapter
+
+    private var selectedDate : String? = null
+    private var selectedTime : String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +35,7 @@ class HomeFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickListener {
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentBookAppointmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         /*val textView: TextView = binding.textHome
@@ -65,8 +69,31 @@ class HomeFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickListener {
             }
         }
 
+        //Adapter
         gridAdapter = TimeSlotsGridAdapter(requireActivity(),times,this)
         _binding!!.gridLayoutTimeSlots.adapter = gridAdapter
+
+        //Calendar click event
+        _binding!!.calendarView.setOnCalendarDayClickListener(object : OnCalendarDayClickListener{
+            override fun onClick(calendarDay: CalendarDay) {
+                Log.d("TAG","${calendarDay.calendar.time}")
+                selectedDate = calendarDay.calendar.time.toString()
+            }
+        })
+
+        //Submit click event
+        _binding!!.button.setOnClickListener {
+
+            //Check if date and time is selected or not
+            if(selectedDate.equals(null) || selectedTime.equals(null)){
+                Toast.makeText(requireActivity(),"Please select Date and Time!",Toast.LENGTH_LONG).show()
+            }else{
+                //Open a dialog and get name and contact number
+
+            }
+
+        }
+
         return root
     }
 
@@ -76,6 +103,6 @@ class HomeFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(selectedValue: String) {
-       
+       selectedTime = selectedValue
     }
 }
