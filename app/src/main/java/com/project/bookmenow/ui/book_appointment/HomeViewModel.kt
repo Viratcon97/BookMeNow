@@ -1,4 +1,4 @@
-package com.project.bookmenow.ui.home
+package com.project.bookmenow.ui.book_appointment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

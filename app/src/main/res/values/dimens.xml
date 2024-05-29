@@ -7,4 +7,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="txt_home_screen_heading">24sp</dimen>
     <dimen name="main_screen_padding">8dp</dimen>
+    <dimen name="_5dp">5dp</dimen>
+    <dimen name="_16sp">16sp</dimen>
 </resources>
