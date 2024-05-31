@@ -10,10 +10,11 @@
     <string name="menu_booking">Book Appointment</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="txt_time">Time</string>
+    <string name="txt_time">Time Slots</string>
     <string name="txt_date">Date</string>
     <string name="txt_submit">Submit</string>
     <string name="txt_phone_number">Phone Number</string>
     <string name="txt_name">Name</string>
     <string name="txt_email">Email</string>
+    <string name="menu_show_appointment">Show Appointments</string>
 </resources>

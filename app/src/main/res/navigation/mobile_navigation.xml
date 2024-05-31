@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_book_appointment" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.project.bookmenow.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_show_appointment"
+        android:name="com.project.bookmenow.ui.gallery.ShowAppointmentsFragment"
+        android:label="@string/menu_show_appointment"
+        tools:layout="@layout/fragment_show_appointments" />
 
     <fragment
         android:id="@+id/nav_slideshow"
