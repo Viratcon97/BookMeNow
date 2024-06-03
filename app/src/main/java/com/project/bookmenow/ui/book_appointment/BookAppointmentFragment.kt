@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -98,11 +99,20 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
                 dialog.setCancelable(false)
                 val button = dialog.findViewById<Button>(R.id.btnSubmit)
                 val closeIv = dialog.findViewById<ImageView>(R.id.ivClose)
+                val nameEt = dialog.findViewById<EditText>(R.id.etName)
+                val emailEt = dialog.findViewById<EditText>(R.id.etEmail)
+                val phoneNumberEt = dialog.findViewById<EditText>(R.id.etPhoneNumber)
+
                 closeIv.setOnClickListener {
                     dialog.dismiss()
                 }
                 button.setOnClickListener {
-
+                    //Validation
+                    if(nameEt.text.toString().isEmpty() || emailEt.text.toString().isEmpty() || phoneNumberEt.text.toString().isEmpty()){
+                        Toast.makeText(requireActivity(),"Please fill the form!",Toast.LENGTH_LONG).show()
+                    }else{
+                        //Submit Data
+                    }
                 }
                 dialog.show()
             }

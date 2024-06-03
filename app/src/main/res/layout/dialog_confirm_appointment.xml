@@ -18,7 +18,7 @@
             android:layout_height="40dp"
             android:background="@color/green"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText"
+            app:layout_constraintBottom_toTopOf="@+id/etName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -45,7 +45,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -53,13 +53,13 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:textSize="@dimen/_16sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText3"
+            app:layout_constraintBottom_toTopOf="@+id/etEmail"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -67,13 +67,13 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:textSize="@dimen/_16sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText2"
-            app:layout_constraintEnd_toEndOf="@+id/editTextText"
-            app:layout_constraintStart_toStartOf="@+id/editTextText"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+            app:layout_constraintBottom_toTopOf="@+id/etPhoneNumber"
+            app:layout_constraintEnd_toEndOf="@+id/etName"
+            app:layout_constraintStart_toStartOf="@+id/etName"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/etPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -83,9 +83,9 @@
             android:minHeight="48dp"
             android:textSize="@dimen/_16sp"
             app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
-            app:layout_constraintEnd_toEndOf="@+id/editTextText3"
-            app:layout_constraintStart_toStartOf="@+id/editTextText3"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+            app:layout_constraintEnd_toEndOf="@+id/etEmail"
+            app:layout_constraintStart_toStartOf="@+id/etEmail"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
         <Button
             android:id="@+id/btnSubmit"
@@ -94,9 +94,9 @@
             android:text="@string/txt_confirm"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editTextText2"
-            app:layout_constraintStart_toStartOf="@+id/editTextText2"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+            app:layout_constraintEnd_toEndOf="@+id/etPhoneNumber"
+            app:layout_constraintStart_toStartOf="@+id/etPhoneNumber"
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 
