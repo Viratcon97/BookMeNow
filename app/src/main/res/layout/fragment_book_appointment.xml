@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".ui.book_appointment.BookAppointmentFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,6 +52,8 @@
             android:layout_height="wrap_content"
             android:horizontalSpacing="5dp"
             android:numColumns="4"
+            android:columnWidth="100dp"
+            android:stretchMode="columnWidth"
             android:verticalSpacing="5dp"
             app:layout_constraintBottom_toTopOf="@+id/calendarView"
             app:layout_constraintTop_toBottomOf="@+id/textView2"

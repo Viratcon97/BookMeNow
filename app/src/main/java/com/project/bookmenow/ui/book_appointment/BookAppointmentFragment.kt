@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -94,8 +95,12 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
                 //Open a dialog and get name and contact number
                 val dialog = Dialog(requireActivity())
                 dialog.setContentView(R.layout.dialog_confirm_appointment)
-                dialog.setCancelable(true)
+                dialog.setCancelable(false)
                 val button = dialog.findViewById<Button>(R.id.btnSubmit)
+                val closeIv = dialog.findViewById<ImageView>(R.id.ivClose)
+                closeIv.setOnClickListener {
+                    dialog.dismiss()
+                }
                 button.setOnClickListener {
 
                 }

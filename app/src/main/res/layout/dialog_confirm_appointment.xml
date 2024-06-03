@@ -34,7 +34,7 @@
                 android:text="@string/txt_enter_details" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/ivClose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,7 +91,7 @@
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_submit"
+            android:text="@string/txt_confirm"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/editTextText2"
