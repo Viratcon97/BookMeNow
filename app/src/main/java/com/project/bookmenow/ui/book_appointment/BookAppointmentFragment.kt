@@ -112,6 +112,7 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
                         Toast.makeText(requireActivity(),"Please fill the form!",Toast.LENGTH_LONG).show()
                     }else{
                         //Submit Data
+
                     }
                 }
                 dialog.show()
