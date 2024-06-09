@@ -37,8 +37,8 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val bookAppointmentViewModel =
+            ViewModelProvider(this).get(BookAppointmentViewModel::class.java)
 
         _binding = FragmentBookAppointmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
