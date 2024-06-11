@@ -18,6 +18,9 @@ import com.project.bookmenow.R
 import com.project.bookmenow.adapter.TimeSlotsGridAdapter
 import com.project.bookmenow.databinding.FragmentBookAppointmentBinding
 import com.project.bookmenow.utils.Constants
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Timer
 
 class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickListener {
 
@@ -86,8 +89,15 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
             }
         })
 
+
         //Submit click event
         _binding!!.button.setOnClickListener {
+
+            //Check if Time is in past or not
+            val current = LocalDate.now()
+            Log.d("TAG","Day ${current.dayOfMonth.toString()}")
+            Log.d("TAG","Current $current")
+            Log.d("TAG","Date - $selectedDate")
 
             //Check if date and time is selected or not
             if(selectedDate.equals(null) || selectedTime.equals(null)){
