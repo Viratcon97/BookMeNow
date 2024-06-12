@@ -19,8 +19,7 @@ import com.project.bookmenow.adapter.TimeSlotsGridAdapter
 import com.project.bookmenow.databinding.FragmentBookAppointmentBinding
 import com.project.bookmenow.utils.Constants
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.Timer
+import java.util.Calendar
 
 class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickListener {
 
@@ -82,10 +81,14 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
         _binding!!.gridLayoutTimeSlots.adapter = gridAdapter
 
         //Calendar click event
+        val cal = Calendar.getInstance()
+        cal.add(Calendar.DATE, -1)
+        _binding!!.calendarView.setMinimumDate(cal)
         _binding!!.calendarView.setOnCalendarDayClickListener(object : OnCalendarDayClickListener{
             override fun onClick(calendarDay: CalendarDay) {
                 Log.d("TAG","${calendarDay.calendar.time}")
                 selectedDate = calendarDay.calendar.time.toString()
+
             }
         })
 
