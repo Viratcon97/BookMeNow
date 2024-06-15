@@ -86,9 +86,7 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
         _binding!!.calendarView.setMinimumDate(cal)
         _binding!!.calendarView.setOnCalendarDayClickListener(object : OnCalendarDayClickListener{
             override fun onClick(calendarDay: CalendarDay) {
-                Log.d("TAG","${calendarDay.calendar.time}")
                 selectedDate = calendarDay.calendar.time.toString()
-
             }
         })
 
