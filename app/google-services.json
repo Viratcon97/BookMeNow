@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "942602450727",
+    "project_id": "bookmenow-496f2",
+    "storage_bucket": "bookmenow-496f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942602450727:android:30d52022a106d2bcf4db02",
+        "android_client_info": {
+          "package_name": "com.project.bookmenow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh3KWDDrCvJpX5q7LQ0rhGwIEsWGorVhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

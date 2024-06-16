@@ -14,9 +14,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.applandeo.materialcalendarview.CalendarDay
 import com.applandeo.materialcalendarview.listeners.OnCalendarDayClickListener
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 import com.project.bookmenow.R
 import com.project.bookmenow.adapter.TimeSlotsGridAdapter
 import com.project.bookmenow.databinding.FragmentBookAppointmentBinding
+import com.project.bookmenow.model.BookAppointment
 import com.project.bookmenow.utils.Constants
 import java.time.LocalDate
 import java.util.Calendar
@@ -29,6 +32,7 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
     // onDestroyView.
     private val binding get() = _binding!!
 
+    val db = Firebase.firestore
     private lateinit var gridAdapter: TimeSlotsGridAdapter
 
     private var selectedDate : String? = null
@@ -123,7 +127,16 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
                         Toast.makeText(requireActivity(),"Please fill the form!",Toast.LENGTH_LONG).show()
                     }else{
                         //Submit Data
-
+                        val data = hashMapOf(
+                            "name" to "Virat"
+                        )
+                        db.collection("BookAppointments")
+                            .add(data)
+                            .addOnSuccessListener {
+                                Log.d("TAG",it.toString())
+                            }.addOnFailureListener {
+                                Log.d("TAG","Error - $it")
+                            }
                     }
                 }
                 dialog.show()
