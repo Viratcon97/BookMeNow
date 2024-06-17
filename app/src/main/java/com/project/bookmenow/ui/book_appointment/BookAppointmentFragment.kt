@@ -127,9 +127,10 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
                         Toast.makeText(requireActivity(),"Please fill the form!",Toast.LENGTH_LONG).show()
                     }else{
                         //Submit Data
-                        val data = hashMapOf(
-                            "name" to "Virat"
-                        )
+                        val data = hashMapOf<String, BookAppointment>()
+                        data["Appointment"] = BookAppointment(nameEt.text.toString(),
+                            emailEt.text.toString(),phoneNumberEt.text.toString(),"13:15")
+
                         db.collection("BookAppointments")
                             .add(data)
                             .addOnSuccessListener {
@@ -143,6 +144,7 @@ class BookAppointmentFragment : Fragment(), TimeSlotsGridAdapter.OnItemClickList
             }
 
         }
+
 
         return root
     }

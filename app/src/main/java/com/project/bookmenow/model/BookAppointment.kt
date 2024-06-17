@@ -1,6 +1,8 @@
 package com.project.bookmenow.model
 
 data class BookAppointment(
-    val name : String,
-    val time : String
+    var name : String,
+    var email : String,
+    val phoneNumber : String,
+    val time : String,
 )
